@@ -1,0 +1,26 @@
+<h3>User:</h3>
+<p>
+  Name: {{ user.name }}
+  <br>
+  Address: {{ user.address }}
+  <br>
+  Phone: {{ user.phone }}
+  <br>
+</p>
+<h1>Routes through stop {{ user.stop }}</h1>
+<ul>
+  <li *ngFor="let route of routes">
+    <span (click)="showBus(route.route.gtfsId)">{{ route.name | delete}}</span>
+  </li>
+</ul>
+<div>
+<h4>{{ time | date:"dd.MM.yy HH:mm" }}</h4>
+</div>
+<p>
+<iframe
+        width="500"
+        height="500"
+        frameborder="0" style="border:0"
+        [src]="url | save" allowfullscreen>
+</iframe>
+</p>
